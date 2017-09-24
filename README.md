@@ -138,27 +138,24 @@ Show a TA that you have the basic Rails app set up and working, and that you hav
 
 2.  We'll begin by adding some more publishers directly into the database using the command line. If we think back to the SimpleQuotes lab last week, the easiest way to insert new data is by opening a new command line tab in the same directory and running `rails db`. Then paste the publishers_sql and authors_sql code given so that we have multiple publishers and authors to choose from (and sharpen our db skills slightly). **Note**: do not add the first publisher since we have already added Pragmatic Bookshelf via the web interface; if you do you will get an error because they are already in the db with a id=1.
 
-    <div class="highlight highlight-sql">
+    ```sql
+    -- SQL for authors
+    INSERT INTO "authors" VALUES (1, 'Sam', 'Ruby', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (2, 'Dave', 'Thomas', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (3, 'Hal', 'Fulton', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (4, 'Robert', 'Hoekman', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (5, 'David', 'Hannson', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (6, 'Dante', 'Alighieri', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (7, 'William', 'Shakespeare', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "authors" VALUES (8, 'Jane', 'Austen', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
 
-    <pre><span class="c1">-- SQL for authors</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Sam'</span><span class="p">,</span> <span class="s1">'Ruby'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Dave'</span><span class="p">,</span> <span class="s1">'Thomas'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Hal'</span><span class="p">,</span> <span class="s1">'Fulton'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Robert'</span><span class="p">,</span> <span class="s1">'Hoekman'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'David'</span><span class="p">,</span> <span class="s1">'Hannson'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">'Dante'</span><span class="p">,</span> <span class="s1">'Alighieri'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">'William'</span><span class="p">,</span> <span class="s1">'Shakespeare'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"authors"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">'Jane'</span><span class="p">,</span> <span class="s1">'Austen'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-
-    <span class="c1">-- SQL for publishers</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"publishers"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Pragmatic Bookshelf'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"publishers"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Washington Square Press'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"publishers"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Addison Wesley'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"publishers"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Everyman Library'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="ss">"publishers"</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'New Riders'</span><span class="p">,</span> <span class="s1">'2015-02-09 12:00:00'</span><span class="p">,</span> <span class="s1">'2014-02-10 12:00:00'</span><span class="p">);</span>
-    </pre>
-
-    </div>
+    -- SQL for publishers
+    INSERT INTO "publishers" VALUES (1, 'Pragmatic Bookshelf', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "publishers" VALUES (2, 'Washington Square Press', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "publishers" VALUES (3, 'Addison Wesley', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "publishers" VALUES (4, 'Everyman Library', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    INSERT INTO "publishers" VALUES (5, 'New Riders', '2015-02-09 12:00:00', '2014-02-10 12:00:00');
+    ```
 
 3.  The first thing we will do is switch the 'publisher_id' field (a text box where you are supposed to remember and type out the appropriate publisher's id) to a drop-down list. Now that we have some publishers in the system, go to the `_form` partial in the Books view and change the publisher_id text_field to the following line:
 
