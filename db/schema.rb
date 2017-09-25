@@ -13,32 +13,32 @@
 ActiveRecord::Schema.define(version: 20170912030110) do
 
   create_table "authors", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "book_authors", force: :cascade do |t|
-    t.integer  "book_id"
-    t.integer  "author_id"
+    t.integer "book_id"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "publisher_id"
-    t.date     "proposal_date"
-    t.date     "contract_date"
-    t.date     "published_date"
-    t.integer  "units_sold"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string "title"
+    t.integer "publisher_id"
+    t.date "proposal_date"
+    t.date "contract_date"
+    t.date "published_date"
+    t.integer "units_sold"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "publishers", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
